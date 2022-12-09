@@ -9,13 +9,22 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Dosis:wght@200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="./assets/css/com.css">
+	  
+	  <link rel="preload" href="https://scripts.converteai.net/c089ce30-b8e6-4238-9f52-26dd3ce80b7a/players/63923b4a2dcfe4000a5a7f93/player.js" as="script">
+	  <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
+	  <link rel="preload" href="https://images.converteai.net/c089ce30-b8e6-4238-9f52-26dd3ce80b7a/players/63923b4a2dcfe4000a5a7f93/thumbnail.jpg" as="image">
+	  <link rel="preload" href="https://cdn.converteai.net/c089ce30-b8e6-4238-9f52-26dd3ce80b7a/639239e3fafc6f000ac5af33/playlist.m3u8" as="fetch">
+	  <link rel="dns-prefetch" href="https://cdn.converteai.net">
+	  <link rel="dns-prefetch" href="https://scripts.converteai.net">
+	  <link rel="dns-prefetch" href="https://images.converteai.net">
+	  <link rel="dns-prefetch" href="https://api.vturb.com.br">
       
 	  <!-- Título da Página -->
-      <title>Método Rugas Nunca Mais</title>
+      <title>Método Diminuindo Colesterol</title>
       
 	  <style type="text/css">
          body {
-         background-color: #28394e;
+         background-color: #00022E;
          /* 
 		    color: white;
 		    background-image: url("assets/img/bg.jpeg");
@@ -76,7 +85,7 @@
 				 margin-left: 50px;
 				 padding-bottom: 0;
 			}
-      </style>
+      </style>	  
 	  
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-188673476-1"></script>
@@ -85,10 +94,9 @@
 		  function gtag(){dataLayer.push(arguments);}
 		  gtag('js', new Date());
 
-		  gtag('config', 'UA-188673476-1');
+		  gtag('config', 'UA-188673476-1');	  
 		</script>
-	  
-	  
+		
 		<!-- Meta Pixel Code -->
 		<script>
 		!function(f,b,e,v,n,t,s)
@@ -99,40 +107,84 @@
 		t.src=v;s=b.getElementsByTagName(e)[0];
 		s.parentNode.insertBefore(t,s)}(window, document,'script',
 		'https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '1048954175782495');
+		fbq('init', '746695730432591');
 		fbq('track', 'PageView');
 		</script>
 		<noscript><img height="1" width="1" style="display:none"
-		src="https://www.facebook.com/tr?id=1048954175782495&ev=PageView&noscript=1"
+		src="https://www.facebook.com/tr?id=746695730432591&ev=PageView&noscript=1"
 		/></noscript>
 		<!-- End Meta Pixel Code -->
-		
+
 		<script>
-			color = '__socialproof-light-style';
-			position = '__socialproof-position-left';
-			radius = '__socialproof-radius-squared';
-			delay = '6000';
-			delayBetween = '17000';
-			sheetUrl = 'https://docs.google.com/spreadsheets/d/1ZBI6Nb594DDPr3q9SLvLWPpl1phv2sufoLluDu88NRE/edit?usp=sharing';
-			iconImgUrl = 'default';
-			geoAPI =  true;
-			brandLink = '';
-			brandName = 'tempo real ';
-			var s=document.getElementsByTagName('script')[0];
-			var sc=document.createElement('script');
-			sc.type='text/javascript';
-			sc.async=true;
-			sc.src='https://socialproofwhitelabel.com/socialproof/app/api/v4/socialproof-widget.js?v' + Math.random();
-			s.parentNode.insertBefore(sc,s);
+		var	arrayDia = new construirArray(7);
+			arrayDia[0] = "Domingo";
+			arrayDia[1] = "Segunda-Feira";
+			arrayDia[2] = "Terça-Feira";
+			arrayDia[3] = "Quarta-Feira";
+			arrayDia[4] = "Quinta-Feira";
+			arrayDia[5] = "Sexta-Feira";
+			arrayDia[6] = "Sabado";
+
+		var arrayMes = new construirArray(12);
+			arrayMes[0] = "Janeiro";
+			arrayMes[1] = "Fevereiro";
+			arrayMes[2] = "Março";		
+			arrayMes[3] = "Abril";
+			arrayMes[4] = "Maio";
+			arrayMes[5] = "Junho";
+			arrayMes[6] = "Julho";
+			arrayMes[7] = "Agosto";
+			arrayMes[8] = "Setembro";
+			arrayMes[9] = "Outubro";
+			arrayMes[10] = "Novembro";
+			arrayMes[11] = "Dezembro";
+			
+		function construirArray(qtdElementos){
+			this.length = qtdElementos
+		}
+
+		function mostrarData(diaSemana, dia, mes, ano){
+			retorno = diaSemana+", "+dia+" de "+mes+" de "+ano;
+			document.getElementById("datahora").innerHTML = retorno;
+		}
+
+		function getMesExtenso(mes){
+			return this.arrayMes[mes];
+		}
+
+		function getDiaExtenso(dia){
+			return this.arrayDia[dia];
+		}
+
+		function atualizarData(){ 
+			dataAtual = new Date();
+			dia = dataAtual.getDate();
+			diaSemana = getDiaExtenso(dataAtual.getDay());
+			mes = getMesExtenso(dataAtual.getMonth());
+			ano = dataAtual.getFullYear();
+			
+			mostrarData(diaSemana, dia, mes, ano);
+		}
+
+		function randomNumber(min, max) {
+			number = Math.floor(Math.random() * (max - min) + min);
+			document.getElementById("random").innerHTML = number;
+			setTimeout("randomNumber(585, 595)", 1000);	//1000ms (1 second)	
+		}
+
+		function atualizarNumero(){
+			randomNumber(585, 595);
+		}
 		</script>		
 	  
    </head>
-   <body>
-      <!--div class="division-EWzQJh0319568__wrapper">
+   <body onload="atualizarData(); atualizarNumero();">
+   
+      <div class="division-EWzQJh0319568__wrapper">
          <style>
             #division-EWzQJh0319568 {
             position: relative;
-            padding: 2vh 20vw 2vh 20vw;
+            padding: 0vh 20vw 0vh 20vw;
             background-color: #a8dadc;
             }
             @media (max-width:1200px) {
@@ -172,202 +224,196 @@
                   }
                   }
                </style>
-               <div class="description-EeMAtJ0379401-element ">
-                  <h3>Hoje&nbsp;<b><span class="sm">21/10/2022</span></b>&nbsp;é o último dia para ver esse vídeo</h3>
+               <div class="description-EeMAtJ0379401-element">
+			      <h3><b>Essa apresentação sairá do ar hoje, <span id="datahora"></span>. Assista até o final!</b></h3>
                </div>
             </div>
          </div>
-      </div-->
+      </div>   
+   
       <header class="py-4">
          <div class="container">
             <div class="row justify-content-center">
                <div class="col-lg-8">
-                  <!-- Imagem Ultrasecreto 
-                     <img class="img-fluid" src="./assets/img/ultrasecreto.svg"> -->
-                  
 				<div class="headline-HkBGbz0384083">
 				   <style>
-					  .headline-HkBGbz0384083-element h1 {
-					  font-size: 2.25vw;
-					  text-align: center;
-					  padding-top: 1vh;
-					  padding-bottom: 1vh;
-					  color: #f1faee;
-					  line-height: 1.1;
-					  font-weight: 900;
-					  }
-					  @media (max-width: 1200px) {
-					  .headline-HkBGbz0384083-element h1 {
-					  font-size: 3.30vw;
-					  padding-top: 3vh;
-					  padding-bottom: 1.5vh;
-					  }
-					  }
-					  @media (max-width: 640px) {
-					  .headline-HkBGbz0384083-element h1 {
-					  font-size: 4.50vw;
-					  text-align: center;
-					  }
-					  }
+					.headline-HkBGbz0384083-element h1 {
+					font-size: 2.0vw;
+					text-align: center;
+					padding-top: 0vh;
+					padding-bottom: 0vh;
+					color: #ffffff;
+					line-height: 1.1;
+					font-weight: 700;
+					}
+					@media (max-width: 1200px) {
+					.headline-HkBGbz0384083-element h1 {
+					font-size: 3.85vw;
+					padding-top: 1.5vh;
+					padding-bottom: 1.5vh;
+					}
+					}
+					@media (max-width: 640px) {
+					.headline-HkBGbz0384083-element h1 {
+					font-size: 5.60vw;
+					text-align: center;
+					}
+					}
 				   </style>
 				   <div class="headline-HkBGbz0384083-element headline">
 					  <h1>
-						 Descubra o&nbsp;<span style="color:#a8dadc">Real Motivo</span>&nbsp;de&nbsp;<span style="color:#a8dadc">99%</span>&nbsp;Dos Cremes Anti-Rugas&nbsp;<span style="color:#a8dadc">Não Funcionarem</span>
+					    Eu Estava Desesperado... Até Que Descobri Este Método Que Revela Como Cortar Um <span style="color:#FF1D1D">Ingrediente Secreto Reduz o Nível De Colesterol Para Menos de 100</span> e Elimina 93% Das Artérias Entupidas
 					  </h1>
 				   </div>
 				</div>
 				<div class="description-IyJwsP0415000">
 				   <style>
-					  .description-IyJwsP0415000-element h3 {
-					  font-size: 1.29vw;
-					  text-align: center;
-					  padding-top: 1vh;
-					  padding-bottom: 4vh;
-					  color: #ffffff;
-					  line-height: 1.1;
-					  font-weight: 400;
-					  }
-					  @media (max-width: 1200px) {
-					  .description-IyJwsP0415000-element h3 {
-					  font-size: 1.65vw;
-					  padding-top: 0.75vh;
-					  padding-bottom: 3vh;
-					  }
-					  }
-					  @media (max-width: 640px) {
-					  .description-IyJwsP0415000-element h3 {
-					  font-size: 2.25vw;
-					  text-align: center;
-					  }
-					  }
+					.description-IyJwsP0415000-element h3 {
+					font-size: 1.32vw;
+					text-align: center;
+					padding-top: 2vh;
+					padding-bottom: 2vh;
+					color: #ffffff;
+					line-height: 1.1;
+					font-weight: 400;
+					}
+					@media (max-width: 1200px) {
+					.description-IyJwsP0415000-element h3 {
+					font-size: 2.20vw;
+					padding-top: 1.5vh;
+					padding-bottom: 1.5vh;
+					}
+					}
+					@media (max-width: 640px) {
+					.description-IyJwsP0415000-element h3 {
+					font-size: 4.00vw;
+					text-align: center;
+					}
+					}
 				   </style>
 				   <div class="description-IyJwsP0415000-element ">
 					  <h3>
-						 E porque esse segredo caseiro restaura a produção de colágeno naturalmente!
+						 Assista o Vídeo Abaixo Para Saber Como!
 					  </h3>
 				   </div>
 				</div>
                   
 				  <!-- VSL -->
-				  <div style="position:relative;padding-top:56.25%;"><iframe id="panda-d3ffc021-9ea3-4c49-83e5-5faf2824bbd5" src="https://player-vz-b45d94c7-5f2.tv.pandavideo.com.br/embed/?v=d3ffc021-9ea3-4c49-83e5-5faf2824bbd5" style="border:none;position:absolute;top:0;left:0;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen=true width="100%" height="100%"></iframe></div>			
+				  <div id="vid_63923b4a2dcfe4000a5a7f93" style="position:relative;width:100%;padding: 56.25% 0 0;"><img id="thumb_63923b4a2dcfe4000a5a7f93" src="https://images.converteai.net/c089ce30-b8e6-4238-9f52-26dd3ce80b7a/players/63923b4a2dcfe4000a5a7f93/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_63923b4a2dcfe4000a5a7f93" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_63923b4a2dcfe4000a5a7f93">var s=document.createElement("script");s.src="https://scripts.converteai.net/c089ce30-b8e6-4238-9f52-26dd3ce80b7a/players/63923b4a2dcfe4000a5a7f93/player.js",s.async=!0,document.head.appendChild(s);</script>
+				  
+					<div class="description-IyJwsP0415000">
+					   <style>
+						.description-IyJwsP0415000-element h3 {
+						font-size: 1.32vw;
+						text-align: center;
+						padding-top: 2vh;
+						padding-bottom: 2vh;
+						color: #ffffff;
+						line-height: 1.1;
+						font-weight: 400;
+						}
+						@media (max-width: 1200px) {
+						.description-IyJwsP0415000-element h3 {
+						font-size: 2.20vw;
+						padding-top: 1.5vh;
+						padding-bottom: 1.5vh;
+						}
+						}
+						@media (max-width: 640px) {
+						.description-IyJwsP0415000-element h3 {
+						font-size: 4.00vw;
+						text-align: center;
+						}
+						}
+					   </style>
+					   <div class="description-IyJwsP0415000-element">
+						  <h3><span id="random"></span> pessoas estão assistindo esse vídeo com você</h3>
+					   </div>
+					</div>
 				  
 				  <!-- Botão -->
                   <div id="cta1" class="mt-4 d-none">
-                     <a href="https://pay.kiwify.com.br/LYl26NK" class="a-btn" style="text-decoration: none;">
-                     <span class="span-btn">QUERO OBTER ACESSO!</span>
+                     <a href="https://pay.kiwify.com.br/PPv1sAM" class="a-btn" style="text-decoration: none;">
+                     <span class="span-btn">QUERO ACESSO AGORA POR APENAS 12x R$ 9,75!</span>
                      <span class="span-btn2">( Atenção: Vagas Limitadas )</span>
                      </a>
                   </div>
 				  
-				  <!-- Facebook comentários -->
-				  <br><br>
+				    <!-- Facebook comentários -->
 					<div id="comentarios_face">
-					   <span class="titulo_comentario">23 comentários</span>
+					   <span class="titulo_comentario">139 comentários</span>
 					   <div class="perfil">
 						  <span class="nome"><img src="assets/img/depoimentos/1.jpg">Amanda Rocha</span>
-						  <p>Ainda bem que assiti esse vídeo até o final. Pensei que não ia funcionar mas em três semanas as rugas começaram a sumir, Grata!!!</p>
+						  <p>E saber que eu usava esse ingrediente todos dias em casa, e hoje retiramos ele e tudo melhorou, eu e meu marido diminuimos nosso colesterol para menos de 100, Grata!!!</p>
 						  <span class="infos">Responder • Curtir • Seguir • 2 min</span>
 					   </div>
 					   <div class="perfil">
-						  <span class="nome"><img src="assets/img/depoimentos/24.jpg">Maria Fernanda</span>
-						  <p>Parece que rejuvenesci 5 anos na primeira semana 👏👏👏 Eu parecia a mais velha do meu grupo de amigas e hoje não mais. Recebo mais elogios do meu marido e só faz 20 dias que estou aplicando!!!</p>
+						  <span class="nome"><img src="assets/img/depoimentos/h1.jpg">Marcio Apolinario</span>
+						  <p>Graças a Deus larguei dos meus remédios, não aguentava mais todos os dias tomar aquelas drogas !! esse ingrediente é fatal, que bom que assisti até o final. 👏👏👏</p>
 						  <span class="infos">Responder • Curtir • Seguir • 4 min</span>
 					   </div>					   
 					   <div class="perfil">
-						  <span class="nome"><img src="assets/img/depoimentos/31.jpg">Raquel Marques</span>
-						  <p>Eu já tinha tentado algumas coisas antes, praticamente tinha desistido até que um dia minha prima me mandou esse vídeo e hoje posso falar que a melhor escolha da minha vida foi ter comprado essas receitas e todos os modulos dentro do programa que me ajudaram muito, investi na minha felicidade!!</p>
+						  <span class="nome"><img src="assets/img/depoimentos/16.jpg">Raquel Marques</span>
+						  <p>Eu já tinha tentado algumas coisas antes, praticamente tinha desistido até que um dia minha prima me mandou esse vídeo e hoje posso falar que foi a melhor escolha da minha vida ter conhecido esse programa, investir na minha saúde, não tem preço.</p>
 						  <span class="infos">Responder • Curtir • Seguir • 4 min </span>
 					   </div>
 					   <div class="perfil">
-						  <span class="nome"><img src="assets/img/depoimentos/32.jpg">Jéssica Sanches</span>
-						  <p>Melhor escolha da minha vida!!!! Para quem tem pele clara, as rugas começam a aparecer cedo, e hoje meu rosto está lisinho. Estou amando o resultado.</p>
-						  <span class="infos">Responder • Curtir • Seguir • 24 min</span>
-					   </div>
-					   <div class="perfil">
-						  <span class="nome"><img src="assets/img/depoimentos/7.jpg">Rosana Alves</span>
-						  <p>Adorei! Estou sentindo uma boa diferença enorme.</p>
-						  <span class="infos">Responder • Curtir • Seguir • 26 min </span>
-					   </div>
-					   <div class="perfil">
-						  <span class="nome"><img src="assets/img/depoimentos/8.jpg">Maria Cristina</span>
-						  <p>Alguem que já comprou pode me dizer se funciona? quero comprar.</p>
+						  <span class="nome"><img src="assets/img/depoimentos/h2.jpg">Lorival Abraao</span>
+						  <p>É verdade isso ai? minha mãe sofre a muito tempo com colesterol alto.</p>
 						  <span class="infos">Responder • Curtir • Seguir • 31 min</span>
 						  <div class="perfil perfil2">
-							 <span class="nome"><img src="assets/img/depoimentos/16.jpg">Patricia Morais</span>
-							 <p>Funciona sim, tanto eu como minha cunhada tinhamos bastante rugas, seguimos o passo a passo das receitas e dos bônus e tivemos resultados bem rápido, e olha que antes disso eu e ela já tinha gastado muito dinheiro e nada funcionava!!!</p>
+							 <span class="nome"><img src="assets/img/depoimentos/35.jpg">Patricia Morais</span>
+							 <p>Sim, funciona, tanto eu como meu pai também tinhamos colesterol alto, seguimos o passo a passo e dos bônus e tivemos resultados bem rápido, e olha que antes disso eu e ele já tinha gastado muito dinheiro e nada funcionava!!!</p>
 							 <span class="infos">Responder • Curtir • Seguir • 3 min </span>
 							 <div class="perfil perfil2">
-							 <span class="nome"><img src="assets/img/depoimentos/8.jpg">Maria Cristina</span>
+							 <span class="nome"><img src="assets/img/depoimentos/h2.jpg">Lorival Abraao</span>
 							 <p>Agradeço sua resposta Patricia Morais</p>
-							 <span class="infos">Responder • Curtir • Seguir • 3 min </span>
+							 <span class="infos">Responder • Curtir • Seguir • 2 min </span>
 						  </div>	
 						  </div>
 						  <div class="perfil perfil2">
-							 <span class="nome"><img src="assets/img/depoimentos/10.jpg">Laura da Silva</span>
-							 <p>Valeu meninas! Vou comprar.</p>
-							 <span class="infos">Responder • Curtir • Seguir • 3 min </span>
+							 <span class="nome"><img src="assets/img/depoimentos/h3.jpg">Luiz Fernando Silva</span>
+							 <p>Valeu pessoal! Vou comprar.</p>
+							 <span class="infos">Responder • Curtir • Seguir • 9 min </span>
 						  </div>
 						  <div class="perfil perfil2">
-							 <span class="nome"><img src="assets/img/depoimentos/11.jpg">Betina Carvalho</span>
+							 <span class="nome"><img src="assets/img/depoimentos/15.jpg">Betina Carvalho</span>
 							 <p>Eu comprei e foi a melhor decisão da minha vida.</p>
-							 <span class="infos">Responder • Curtir • Seguir • 3 min </span>
+							 <span class="infos">Responder • Curtir • Seguir • 13 min </span>
 						  </div>					  
 					   </div>
 					   <div class="perfil">
-						  <span class="nome"><img src="assets/img/depoimentos/12.jpg">Cida Soares</span>
-						  <p>Minha vida mudou do dia pra noite!!! Obrigada pelo guia… Deus te abençoe.</p>
+						  <span class="nome"><img src="assets/img/depoimentos/h5.jpg">Carlos Soares</span>
+						  <p>Minha vida mudou do dia pra noite!!! Obrigado pelo guia… Deus te abençoe.</p>
 						  <span class="infos">Responder • Curtir • Seguir • 55 min </span>
 					   </div>
 					   <div class="perfil">
-						  <span class="nome"><img src="assets/img/depoimentos/35.jpg">Carla Yager</span>
-						  <p>Esse vídeo mudou completamente a minha vida, vale a pena cada segundo. Nem acredito que após alguns anos tentando recuperar minha pele envelhecida eu tenha conseguido.
-😍 😍 😍 Foi um divisor de águas na minha vida!!</p>
-						  <span class="infos">Responder • Curtir • Seguir • 58 min</span>
+						  <span class="nome"><img src="assets/img/depoimentos/h4.jpg">Marcos Donato</span>
+						  <p>Gente, antes eu estava fazendo dietas doidas me privando de comer as coisas, com esse guia, estou comendo de tudo.</p>
+						  <span class="infos">Responder • Curtir • Seguir • 55 min </span>
+					   </div>					   
+					   <div class="none" style="text-align:center">
+					       <img src="assets/img/loading.gif" width="50" height="50">
+					       <br><br>
+					       <span class="nome" style="text-align:center"><i>Carregando mais comentários...</i></span>
 					   </div>
-					   <div class="perfil">
-						  <span class="nome"><img src="assets/img/depoimentos/14.jpg">Ana Aparecida</span>
-						  <p>Sempre usei cosméticos para tentar manter minha pele jovem e saudável. Passava horas passando cremes no rosto, além de gastar muito dinheiro. Até o dia em que vi esse anúncio e resolvi experimentar. Desde então, parei de usar todos os cremes e cosméticos. Incrivelmente, hoje sinto que minha pele está muito mais jovem e firme, ainda melhor do que quando era jovem. É incrível.</p>
-						  <span class="infos">Responder • Curtir • Seguir • 1h </span>
-						  <div class="perfil perfil2">
-							 <span class="nome"><img src="assets/img/depoimentos/15.jpg">Maria do Rosário</span>
-							 <p>Eu tive sorte de ter conseguido obrigado, funciona e funciona muitooooo bem e olha que eu já tinha tentando vários cremes. Mudou minha vida, pois me sinto bem mais jovem sem as rugas. Não sabia que era tão simples.</p>
-							 <span class="infos">Responder • Curtir • Seguir • 1h </span>
-						  </div>
-					   </div>
-					   <div class="perfil">
-						  <span class="nome"><img src="assets/img/depoimentos/17.jpg">Carla Almeida</span>
-						  <p>Não tinha muito dinheiro para cuidar do rosto com dermatologista ou comprar cosméticos caros. Então eu simplesmente aceitei que a velhice tinha chegado para mim e que eu ia ficar feia! Mas depois que conheci essas receitas sinto que estou ficando com a pele mais jovem a cada dia.</p>
-						  <span class="infos">Responder • Curtir • Seguir • 1h </span>
-					   </div>
-					   <div class="perfil">
-						  <span class="nome"><img src="assets/img/depoimentos/18.jpg">Maria Laura</span>
-						  <p>Gente eu achava que era mentira, mas tudo dando certo…. eu me sentia muito pra baixo, mal amada. Por anos eu fiquei isolada por não ter auto-estima. Cheguei ao ponto de ir numa consulta de psicologa… Com esse método consegui o impossível, que foi justamente o que a psicóloga me indicou! Investir na minha aparência e notar os resultados a cada dia! Transformou minha vida de fora para dentro.</p>
-						  <span class="infos">Responder • Curtir • Seguir • 1h </span>
-					   </div>
-					   <div class="perfil">
-						  <span class="nome"><img src="assets/img/depoimentos/34.jpg">Maira Lima</span>
-						  <p>Gente, tem alguma contra-indicação? Eu tenho a pele sensivel…. Será que funciona de verdade?</p>
-						  <span class="infos">Responder • Curtir • Seguir • 1h </span>
-					   </div>
-					   <div class="perfil">
-						  <span class="nome"><img src="assets/img/depoimentos/28.jpg">Rosa Amanda</span>
-						  <p>Já tenho 53 anos e pensei que não tinha mais esperança… Mas isso realmente me ajudou com a minha pele, Já me deram 30 anos esses dias, a diferença é incrível gente.</p>
-						  <span class="infos">Responder • Curtir • Seguir • 1h </span>
-					   </div>
-					   <div class="perfil">
-						  <span class="nome"><img src="assets/img/depoimentos/27.jpg">Vilma Sousa</span>
-						  <p>Só agradecer as amigas que compartilharam isso comigo… Muito obrigada de coração por salvar minha autoestima.</p>
-						  <span class="infos">Responder • Curtir • Seguir • 1h </span>
-					   </div>				   
 					   <br>
 					   <span class="titulo_outros" style="text-align:center">Você precisa estar logado para comentar</span>
 					   <br>
-					   <span class="titulo_outros"><img src="assets/img/facebook.png">&nbsp;Plugin de comentários do Facebook</span>					   
-					</div>								  
+					   <span class="titulo_outros"><img src="assets/img/facebook.png">&nbsp;Plugin de comentários do Facebook</span>
+					</div>				  
+
+				  <!-- Botão -->
+                  <div id="cta2" class="mt-4 d-none">
+                     <a href="https://pay.kiwify.com.br/PPv1sAM" class="a-btn" style="text-decoration: none;">
+                     <span class="span-btn">QUERO ACESSO AGORA POR APENAS 12x R$ 9,75!</span>
+                     <span class="span-btn2">( Atenção: Vagas Limitadas )</span>
+                     </a>
+                  </div>					
                   
 				  <!-- Termos de uso e política de privacidade -->
                   <div class="text-white mt-4" style="text-align:center">
-				      <p><strong>Copyright ® 2022 – Método Rugas Nunca Mais</strong><br>
+				      <p><strong>Copyright ® 2022 – Método Diminuindo Colesterol</strong><br>
                       Todos os direitos reservados</p>	
 				      <a href="termos.html" class="text-white">Termos de uso</a> – <a href="privacidade.html" class="text-white">Política de privacidade</a>
 					  <br><br>
@@ -377,16 +423,15 @@
 					  <br><br>
 					  Este site NÃO É do Facebook. Este site NÃO faz parte do Facebook ou Facebook Inc. Além disso, esse site NÃO é endossado pelo Facebook de nenhuma maneira.
 					  <br><br>
-					  Os resultados podem variar de acordo com a pessoa. Todos os testemunhos, apesar de serem reais e gentilmente enviados por clientes, NÃO representam resultados únicos, já que cada indivíduo é diferente do outro. Jamais faça alguma mudança na alimentação ou no exercício físico sem consultar seu médico ou profissional de saúde. Somente um profissional da área pode fazer uma avaliação detalhada e decidir se você está apto ou não a essas alterações. Todos os conhecimentos, dicas e truques compartilhados nesta página são meramente educativos e explicativos em relação ao produto comercializado.
-					  <br><br>
-					  Em caso de dúvida, envie um e-mail para armazemtechfenix@gmail.com e entraremos em contato o mais breve possível.</p>						  
+					  Os resultados podem variar de acordo com a pessoa. Todos os testemunhos, apesar de serem reais e gentilmente enviados por clientes, NÃO representam resultados únicos, já que cada indivíduo é diferente do outro. Jamais faça alguma mudança na alimentação ou no exercício físico sem consultar seu médico ou profissional de saúde. Somente um profissional da área pode fazer uma avaliação detalhada e decidir se você está apto ou não a essas alterações. Todos os conhecimentos, dicas e truques compartilhados nesta página são meramente educativos e explicativos em relação ao produto comercializado.</p>						  
 				  </div>
                </div>
             </div>
          </div>
       </header>
       <script type="text/javascript">
-         setTimeout(() => {document.getElementById("cta1").classList.remove("d-none")}, 1455000); // temporização da Call to Action (em milissegundos)
+         setTimeout(() => {document.getElementById("cta1").classList.remove("d-none")}, 1794000); // Call to Action (em milissegundos)
+		 setTimeout(() => {document.getElementById("cta2").classList.remove("d-none")}, 1794000); // Call to Action (em milissegundos)
       </script>
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
